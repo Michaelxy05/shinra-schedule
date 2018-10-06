@@ -1,0 +1,26 @@
+label {
+	font-weight: bold;
+}
+
+.train-icon {
+	height: 50px;
+	width: 50px;
+}
+
+h1 {
+    font-family: 'Pridi', serif;
+}
+
+body {
+    background-image: url(../images/midgar_estacion_sector_1_by_radigar-d9qp9wp.png);
+    max-width: 100%;
+    max-width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.row {
+    opacity: .9;
+}

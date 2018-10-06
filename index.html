@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Train Scheduler</title>
+
+    <!-- Bootstrap CDN link -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Bootswatch link -->
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/spacelab/bootstrap.min.css">
+
+    <!-- Reset css file -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Stalinist+One|Pridi" rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- JQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Firebase Javascript link -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+
+    <!-- Add Moment JS -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <!-- Firebase UI JS and CSS for authentication -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+
+</head>
+
+<audio id="audio" src="assets/audio/Train Horn-Sound Effect.mp3" type="audio/mp3"></audio>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-4 bg-danger border border-danger">
+                    <div class="card-body text-white">
+                        <h1 class="card-title text-center"><img src="assets/images/Shinra.png" height=100px width=100px alt="shinraLogo">Sector 1 Train Station</h1>
+                        <h5 class="card-text text-center">
+                            <tr>
+                            <td style="color: #b2b7f2; font-size: 5.3em; font-family: Times New Roman ,serif; font-weight: bold; padding: 4px 2px 2px; width: 0.5em; vertical-align: top;"> “
+                            </td><td> <i>Using fear and power to create a better future.</i>
+                            </td><td style="color: #b2b7f2; font-size: 5.3em; font-family: Times New Roman ,serif; font-weight: bold; padding: 4px 2px 2px; width: 0.5em; vertical-align: bottom;"> „
+                            </td></tr>
+                            <tr>
+                            <td>
+                            </td>
+                            <td style="text-align: right;"> <small>~ A company slogan of Shinra Inc. (aka Shinra Electric Power Company).</small>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        </h5>
+                        <h5 class="card-text"></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4 content">
+            <div class="col-md-12">
+                <div class="card border border-danger">
+                    <div class="card-header bg-danger text-white">
+                        <h5>Today's Train Schedule</h5>
+                    </div>
+                    <div class="card-body">
+                        <!--Display current/running time here using moment Js-->
+                        <h5>Current time: <span id="current-time"></span></h5>
+                        <table class="table table-hover table-responsive-md">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Train name </th>
+                                    <th scope="col">Destination </th>
+                                    <th scope="col">Frequency (min) </th>
+                                    <th scope="col">Next arrival </th>
+                                    <th scope="col">Minutes away </th>
+                                </tr>
+                            </thead>
+                            <tbody id="schedule-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row content">
+            <div class="col-md-12">
+                <div class="card border border-danger">
+                    <div class="card-header bg-danger text-white">
+                        <h5> Add train</h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="trainName">Train Name </label>
+                                <input type="text" class="form-control" id="train-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="destination">Destination </label>
+                                <input type="text" class="form-control" id="destination" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="firstTrainTime">First Train Arrival Time (HH:mm - military time - use number only) </label>
+                                <input type="text" class="form-control" id="first-train-time" placeholder="HH:mm">
+                            </div>
+                            <div class="form-group">
+                                <label for="firstTrainTime">Frequency (min - use number only) </label>
+                                <input type="text" class="form-control" id="frequency" placeholder="">
+                            </div>
+                            <button type="submit" class="btn btn-danger rounded" id="submit-button" data-toggle="modal">Add schedule</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!--Javascript Link -->
+    <script src="assets/javascript/main.js"></script>
+
+</body>
+
+</html>
